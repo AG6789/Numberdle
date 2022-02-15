@@ -35,7 +35,7 @@ document.querySelector(".check").addEventListener("click", function () {
   for (let i = 0; i < 4; i++) {
     if (JSON.stringify(secretArray) == JSON.stringify(guessArray)) {
       console.log(
-        `The number was ${secretNumber}, you got it in just ${guessCounter} tries!`
+        `The number was ${secretNumber}, you got it in just ${guessCounter+1} tries!`
       );
       break;
     }
