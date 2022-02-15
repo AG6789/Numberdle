@@ -2,9 +2,9 @@
 
 // Elimination of Duplicates
 
-function hasDuplicates(arr) {
-  return new Set(arr).size !== arr.length;
-}
+// function hasDuplicates(arr) {
+//   return new Set(arr).size !== arr.length;
+// }
 
 // Secret Number
 function secretNumberFunction(min, max) {
@@ -12,12 +12,12 @@ function secretNumberFunction(min, max) {
   let secNum = Math.floor(Math.random() * (max - min + 1) + min);
   let secArr = Array.from(String(secNum), Number);
 
-  if (hasDuplicates(secArr)) {
-    while (hasDuplicates(secArr)) {
-      secNum = Math.floor(Math.random() * (max - min + 1) + min);
-      secArr = Array.from(String(secNum), Number);
-    }
-  }
+  // if (hasDuplicates(secArr)) {
+  //   while (hasDuplicates(secArr)) {
+  //     secNum = Math.floor(Math.random() * (max - min + 1) + min);
+  //     secArr = Array.from(String(secNum), Number);
+  //   }
+  // }
 
   return secNum;
 }
