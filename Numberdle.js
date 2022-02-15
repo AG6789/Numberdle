@@ -1,11 +1,5 @@
 "use strict";
 
-// User Guess
-// const guess = Number(document.querySelector(".guess").value);
-
-const guess = prompt("What is your guess?");
-const guessArray = Array.from(String(guess), Number);
-
 // Elimination of Duplicates
 
 function hasDuplicates(arr) {
@@ -31,18 +25,33 @@ function secretNumberFunction(min, max) {
 let secretNumber = secretNumberFunction(1000, 9999);
 const secretArray = Array.from(String(secretNumber), Number);
 
-for (let i = 0; i < 4; i++) {
-  if (secretArray.includes(guessArray[i])) {
-    if (guessArray[i] === secretArray[i]) {
-      console.log(`${guessArray[i]} is in the number and in the correct spot.`);
-    } else {
-      console.log(`${guessArray[i]} is in the number but in the wrong spot.`);
-    }
-  } else {
-    console.log(`${guessArray[i]} is not in the number.`);
-  }
-}
+let guessCounter = 0;
 
-console.log(guessArray, secretArray);
+document.querySelector(".check").addEventListener("click", function () {
+  const guess = Number(document.querySelector(".guess").value);
+  const guessArray = Array.from(String(guess), Number);
+
+  console.log(`--- RESULTS OF GUESS ${guessCounter + 1} --- `);
+  for (let i = 0; i < 4; i++) {
+    if (JSON.stringify(secretArray) == JSON.stringify(guessArray)) {
+      console.log(
+        `The number was ${secretNumber}, you got it in just ${guessCounter} tries!`
+      );
+      break;
+    }
+    if (secretArray.includes(guessArray[i])) {
+      if (guessArray[i] === secretArray[i]) {
+        console.log(
+          `${guessArray[i]} is in the number and in the correct spot.`
+        );
+      } else {
+        console.log(`${guessArray[i]} is in the number but in the wrong spot.`);
+      }
+    } else {
+      console.log(`${guessArray[i]} is not in the number.`);
+    }
+  }
+  guessCounter++;
+});
 
 // document.querySelector(".enter").addEventListener("click", function () {});
