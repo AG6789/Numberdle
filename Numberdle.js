@@ -108,5 +108,3 @@ document.querySelector(".check").addEventListener("click", function () {
     guessArray.splice(0, guessArray.length);
   }
 });
-
-// document.querySelector(".enter").addEventListener("click", function () {});
