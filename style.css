@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
+
+body {
+  font-family: "Josefin Sans";
+  color: #eee;
+  background-color: #222;
+  /* background-color: #60b347; */
+}
+
+.guesses0,
+.guesses1,
+.guesses2,
+.guesses3,
+.guesses4 {
+  display: inline;
+  font-family: inherit;
+}
+
+.guesses5,
+.guesses6,
+.guesses7,
+.guesses8,
+.guesses9 {
+  display: inline;
+  font-family: inherit;
+}
+
+.guesses10,
+.guesses11,
+.guesses12,
+.guesses13,
+.guesses14 {
+  display: inline;
+  font-family: inherit;
+}
+
+.guesses15,
+.guesses16,
+.guesses17,
+.guesses18,
+.guesses19 {
+  display: inline;
+  font-family: inherit;
+}
+
+.guesses20,
+.guesses21,
+.guesses22,
+.guesses23,
+.guesses24 {
+  display: inline;
+  font-family: inherit;
+}
+
+.tries {
+  font-family: inherit;
+  color: inherit;
+}
