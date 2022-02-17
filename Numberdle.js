@@ -14,7 +14,6 @@ let guessCounter = 0;
 const guessArray = [];
 
 document.querySelector(".check").addEventListener("click", function () {
-  if (document.querySelector(".guess").value.length > 1) return
   guessArray.push(Number(document.querySelector(".guess").value));
 
   console.log(`Guess ${guessArray.length} taken!`);
