@@ -44,13 +44,10 @@ document.querySelector(".check").addEventListener("click", function () {
 
     for (let i = 0; i < 5; i++) {
       if (JSON.stringify(secretArray) == JSON.stringify(guessArray)) {
-        console.log(
-          `The series was ${secretArray}, you got it in just ${
-            guessCounter + 1
-          } tries!`
-        );
-
         document.querySelector(`.gue${guessCounter}`).style.color = "#00FF00	";
+        document.querySelector(".tries").textContent = `You got it in ${
+          guessCounter + 1
+        } tries!`;
 
         break;
       }
@@ -105,6 +102,21 @@ document.querySelector(".check").addEventListener("click", function () {
       }
     }
     guessCounter++;
+
+    if (JSON.stringify(secretArray) != JSON.stringify(guessArray)) {
+      document.querySelector(".tries").textContent = `${
+        5 - guessCounter
+      } tries left!`;
+
+      if (guessCounter === 5) {
+        document.querySelector(
+          ".tries"
+        ).textContent = `Sorry, you lost :( Today's series was ${secretArray})`;
+      }
+    }
+
     guessArray.splice(0, guessArray.length);
   }
 });
+
+
