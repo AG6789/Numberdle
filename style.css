@@ -56,3 +56,12 @@ body {
   font-family: inherit;
   color: inherit;
 }
+
+.guess {
+  text-align: center;
+  font-size: 15;
+}
+
+.left {
+  font-size: 25;
+}
