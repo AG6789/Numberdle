@@ -8,7 +8,7 @@ for (let i = 0; i < 5; i++) {
 
 document.querySelector(".left").style.color = "white";
 
-const secretArray = [2, 3, 5, 9, 17];
+const secretArray = [2, 3, 5, 7, 11];
 
 let guessCounter = 0;
 const guessArray = [];
