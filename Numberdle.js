@@ -11,7 +11,7 @@ document.querySelector(".left").style.color = "white";
 const secretArray = [2, 3, 5, 7, 11];
 
 let guessCounter = 0;
-const guessArray = [];
+let guessArray = [];
 const guesss = document.querySelector(".guess").textContent;
 
 document.querySelector(".check").addEventListener("click", function () {
