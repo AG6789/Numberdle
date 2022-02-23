@@ -12,20 +12,15 @@ const secretArray = [2, 3, 5, 7, 11];
 
 let guessCounter = 0;
 const guessArray = [];
+const guesss = document.querySelector(".guess").textContent;
 
 document.querySelector(".check").addEventListener("click", function () {
-  guessArray.push(Number(document.querySelector(".guess").value));
-
-  console.log(`Guess ${guessArray.length} taken!`);
-  if (guessArray.length < 5) {
-    console.log(`Please add ${5 - guessArray.length} more entries.`);
-  }
+  guessArray = Array.from(String(guesss));
 
   if (guessCounter === 0) {
     document.querySelector(`.guesses${guessArray.length - 1}`).textContent =
       guessArray[guessArray.length - 1];
   } else if (guessCounter === 1) {
-    console.log(guessArray.length);
     document.querySelector(`.guesses${guessArray.length + 4}`).textContent =
       guessArray[guessArray.length - 1];
   } else if (guessCounter === 2) {
