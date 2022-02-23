@@ -19,19 +19,19 @@ document.querySelector(".check").addEventListener("click", function () {
 
   for (let i = 0; i < 5; i++) {
     if (guessCounter === 0) {
-      document.querySelector(`.guesses${i - 1}`).textContent =
+      document.querySelector(`.guesses${i}`).textContent =
         guessArray[guessArray.length - 1];
     } else if (guessCounter === 1) {
-      document.querySelector(`.guesses${i + 4}`).textContent =
+      document.querySelector(`.guesses${i + 5}`).textContent =
         guessArray[guessArray.length - 1];
     } else if (guessCounter === 2) {
-      document.querySelector(`.guesses${i + 9}`).textContent =
+      document.querySelector(`.guesses${i + 10}`).textContent =
         guessArray[guessArray.length - 1];
     } else if (guessCounter === 3) {
-      document.querySelector(`.guesses${i + 14}`).textContent =
+      document.querySelector(`.guesses${i + 15}`).textContent =
         guessArray[guessArray.length - 1];
     } else if (guessCounter === 4) {
-      document.querySelector(`.guesses${i + 19}`).textContent =
+      document.querySelector(`.guesses${i + 20}`).textContent =
         guessArray[guessArray.length - 1];
     }}
   
