@@ -15,26 +15,26 @@ let guessArray = [];
 const guesss = document.querySelector(".guess").textContent;
 
 document.querySelector(".check").addEventListener("click", function () {
-  guessArray = Array.from(String(guesss));
+   guessArray.push(Number(document.querySelector(".guess").value));
 
-  for (let i = 0; i < 5; i++) {
-    if (guessCounter === 0) {
-      document.querySelector(`.guesses${i}`).textContent =
-        guessArray[guessArray.length - 1];
-    } else if (guessCounter === 1) {
-      document.querySelector(`.guesses${i + 5}`).textContent =
-        guessArray[guessArray.length - 1];
-    } else if (guessCounter === 2) {
-      document.querySelector(`.guesses${i + 10}`).textContent =
-        guessArray[guessArray.length - 1];
-    } else if (guessCounter === 3) {
-      document.querySelector(`.guesses${i + 15}`).textContent =
-        guessArray[guessArray.length - 1];
-    } else if (guessCounter === 4) {
-      document.querySelector(`.guesses${i + 20}`).textContent =
-        guessArray[guessArray.length - 1];
-    }}
-  
+ 
+  if (guessCounter === 0) {
+    document.querySelector(`.guesses${guessArray.length - 1}`).textContent =
+      guessArray[guessArray.length - 1];
+  } else if (guessCounter === 1) {
+    document.querySelector(`.guesses${guessArray.length + 4}`).textContent =
+      guessArray[guessArray.length - 1];
+  } else if (guessCounter === 2) {
+    document.querySelector(`.guesses${guessArray.length + 9}`).textContent =
+      guessArray[guessArray.length - 1];
+  } else if (guessCounter === 3) {
+    document.querySelector(`.guesses${guessArray.length + 14}`).textContent =
+      guessArray[guessArray.length - 1];
+  } else if (guessCounter === 4) {
+    document.querySelector(`.guesses${guessArray.length + 19}`).textContent =
+      guessArray[guessArray.length - 1];
+  }
+
 
   if (guessArray.length === 5) {
     console.log(`--- RESULTS OF GUESS ${guessCounter + 1} --- `);
