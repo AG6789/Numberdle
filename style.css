@@ -64,4 +64,5 @@ body {
 
 .left {
   font-size: 25;
+  font-family: inherit;
 }
