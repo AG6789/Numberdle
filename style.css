@@ -64,5 +64,9 @@ body {
 
 .left {
   font-size: 25;
+}
+
+.check,
+.clear {
   font-family: inherit;
 }
