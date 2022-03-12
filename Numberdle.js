@@ -9,50 +9,70 @@ for (let i = 0; i < 5; i++) {
 document.querySelector(".left").style.color = "white";
 
 const secretArray = [0, 7, 26, 63, 124];
-document.querySelector(".tries1").textContent = `Today's starting number is ${secretArray[0]}.`
+document.querySelector(
+  ".tries1"
+).textContent = `Today's starting number is ${secretArray[0]}.`;
 
 let guessCounter = 0;
-let guessArray = [];
-const guesss = document.querySelector(".guess").textContent;
+let guess = "";
+let gArray = [];
+let gArray2 = [];
+
+document.querySelector(".clear").addEventListener("click", function () {
+  document.querySelector(".guess").value = "";
+});
 
 document.querySelector(".check").addEventListener("click", function () {
-   guessArray.push(Number(document.querySelector(".guess").value));
-
- 
-  if (guessCounter === 0) {
-    document.querySelector(`.guesses${guessArray.length - 1}`).textContent =
-      guessArray[guessArray.length - 1];
-  } else if (guessCounter === 1) {
-    document.querySelector(`.guesses${guessArray.length + 4}`).textContent =
-      guessArray[guessArray.length - 1];
-  } else if (guessCounter === 2) {
-    document.querySelector(`.guesses${guessArray.length + 9}`).textContent =
-      guessArray[guessArray.length - 1];
-  } else if (guessCounter === 3) {
-    document.querySelector(`.guesses${guessArray.length + 14}`).textContent =
-      guessArray[guessArray.length - 1];
-  } else if (guessCounter === 4) {
-    document.querySelector(`.guesses${guessArray.length + 19}`).textContent =
-      guessArray[guessArray.length - 1];
+  guess = document.querySelector(".guess").value;
+  gArray = guess.split(" ");
+  gArray2 = gArray.map((i) => Number(i));
+  for (let i = 0; i < 5; i++) {
+    if (String(gArray2[i]) === "NaN") {
+      console.log(gArray2[i]);
+      document.querySelector(".tries").textContent = "No alphabets allowed 😉";
+      gArray2.splice(0, gArray2.length);
+      console.log(gArray2);
+    }
   }
 
+  if (gArray2.length > 0) {
+    if (guessCounter === 0) {
+      for (let i = 0; i < gArray2.length; i++) {
+        document.querySelector(`.guesses${i}`).textContent = gArray2[i];
+      }
+    } else if (guessCounter === 1) {
+      for (let i = 0; i < gArray2.length; i++) {
+        document.querySelector(`.guesses${i + 5}`).textContent = gArray2[i];
+      }
+    } else if (guessCounter === 2) {
+      for (let i = 0; i < gArray2.length; i++) {
+        document.querySelector(`.guesses${i + 10}`).textContent = gArray2[i];
+      }
+    } else if (guessCounter === 3) {
+      for (let i = 0; i < gArray2.length; i++) {
+        document.querySelector(`.guesses${i + 15}`).textContent = gArray2[i];
+      }
+    } else if (guessCounter === 4) {
+      for (let i = 0; i < gArray2.length; i++) {
+        document.querySelector(`.guesses${i + 20}`).textContent = gArray2[i];
+      }
+    }
 
-  if (guessArray.length === 5) {
     console.log(`--- RESULTS OF GUESS ${guessCounter + 1} --- `);
 
     for (let i = 0; i < 5; i++) {
-      if (JSON.stringify(secretArray) == JSON.stringify(guessArray)) {
+      if (JSON.stringify(secretArray) == JSON.stringify(gArray2)) {
         document.querySelector(`.gue${guessCounter}`).style.color = "#00FF00	";
         document.querySelector(".tries").textContent = `You got it in ${
           guessCounter + 1
-        } tries!`;
+        } tries! ✅`;
 
         break;
       }
-      if (secretArray.includes(guessArray[i])) {
-        if (guessArray[i] === secretArray[i]) {
+      if (secretArray.includes(gArray2[i])) {
+        if (gArray2[i] === secretArray[i]) {
           console.log(
-            `${guessArray[i]} is in the series and in the correct spot.`
+            `${gArray2[i]} is in the series and in the correct spot.`
           );
 
           if (guessCounter === 0) {
@@ -67,9 +87,7 @@ document.querySelector(".check").addEventListener("click", function () {
             document.querySelector(`.guesses${i + 19}`).style.color = "#00FF00";
           }
         } else {
-          console.log(
-            `${guessArray[i]} is in the series but in the wrong spot.`
-          );
+          console.log(`${gArray2[i]} is in the series but in the wrong spot.`);
 
           if (guessCounter === 0) {
             document.querySelector(`.guesses${i}`).style.color = "#FFFF00	";
@@ -84,7 +102,7 @@ document.querySelector(".check").addEventListener("click", function () {
           }
         }
       } else {
-        console.log(`${guessArray[i]} is not in the series.`);
+        console.log(`${gArray2[i]} is not in the series.`);
 
         if (guessCounter === 0) {
           document.querySelector(`.guesses${i}`).style.color = "#FF0000		";
@@ -101,7 +119,7 @@ document.querySelector(".check").addEventListener("click", function () {
     }
     guessCounter++;
 
-    if (JSON.stringify(secretArray) != JSON.stringify(guessArray)) {
+    if (JSON.stringify(secretArray) != JSON.stringify(gArray2)) {
       document.querySelector(".tries").textContent = `${
         5 - guessCounter
       } tries left!`;
@@ -109,12 +127,10 @@ document.querySelector(".check").addEventListener("click", function () {
       if (guessCounter === 5) {
         document.querySelector(
           ".tries"
-        ).textContent = `Sorry, you lost :( Today's series was ${secretArray}`;
+        ).textContent = `❌ Sorry, you lost. Today's series was ${secretArray}`;
       }
     }
-
-    guessArray.splice(0, guessArray.length);
   }
+
+  gArray2.splice(0, gArray2.length);
 });
-
-
