@@ -35,7 +35,7 @@ document.querySelector(".check").addEventListener("click", function () {
     }
   }
 
-  if (gArray2.length > 0) {
+  if (gArray2.length === 5) {
     if (guessCounter === 0) {
       for (let i = 0; i < gArray2.length; i++) {
         document.querySelector(`.guesses${i}`).textContent = gArray2[i];
