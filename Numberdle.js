@@ -20,6 +20,7 @@ let gArray2 = [];
 
 document.querySelector(".clear").addEventListener("click", function () {
   document.querySelector(".guess").value = "";
+  document.querySelector(".tries").textContent = "Start Playing!";
 });
 
 document.querySelector(".check").addEventListener("click", function () {
