@@ -4,10 +4,10 @@ body {
   font-family: "Josefin Sans";
   color: #eee;
   background-color: #222;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: auto;
-  min-width: 600px;
-  max-width: 2000px;
+
   /* background-color: #60b347; */
 }
 
