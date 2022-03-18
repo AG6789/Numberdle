@@ -26,6 +26,11 @@ document.querySelector(".check").addEventListener("click", function () {
   guess = document.querySelector(".guess").value;
   gArray = guess.split(" ");
   gArray2 = gArray.map((i) => Number(i));
+
+  if (gArray.length > 5) {
+    gArray.length = 5
+  }
+  
   for (let i = 0; i < 5; i++) {
     if (String(gArray2[i]) === "NaN") {
       console.log(gArray2[i]);
@@ -71,9 +76,6 @@ document.querySelector(".check").addEventListener("click", function () {
       }
       if (secretArray.includes(gArray2[i])) {
         if (gArray2[i] === secretArray[i]) {
-          console.log(
-            `${gArray2[i]} is in the series and in the correct spot.`
-          );
 
           if (guessCounter === 0) {
             document.querySelector(`.guesses${i}`).style.color = "#00FF00";
@@ -87,7 +89,6 @@ document.querySelector(".check").addEventListener("click", function () {
             document.querySelector(`.guesses${i + 19}`).style.color = "#00FF00";
           }
         } else {
-          console.log(`${gArray2[i]} is in the series but in the wrong spot.`);
 
           if (guessCounter === 0) {
             document.querySelector(`.guesses${i}`).style.color = "#FFFF00	";
@@ -102,7 +103,6 @@ document.querySelector(".check").addEventListener("click", function () {
           }
         }
       } else {
-        console.log(`${gArray2[i]} is not in the series.`);
 
         if (guessCounter === 0) {
           document.querySelector(`.guesses${i}`).style.color = "#FF0000		";
