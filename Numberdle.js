@@ -87,7 +87,7 @@ document.querySelector(".check").addEventListener("click", function () {
           } else if (guessCounter === 3) {
             document.querySelector(`.guesses${i + 15}`).style.color = "#00FF00";
           } else if (guessCounter === 4) {
-            document.querySelector(`.guesses${i + 19}`).style.color = "#00FF00";
+            document.querySelector(`.guesses${i + 20}`).style.color = "#00FF00";
           }
         } else {
 
@@ -100,7 +100,7 @@ document.querySelector(".check").addEventListener("click", function () {
           } else if (guessCounter === 3) {
             document.querySelector(`.guesses${i + 15}`).style.color = "#FFFF00	";
           } else if (guessCounter === 4) {
-            document.querySelector(`.guesses${i + 19}`).style.color = "#FFFF00";
+            document.querySelector(`.guesses${i + 20}`).style.color = "#FFFF00";
           }
         }
       } else {
@@ -114,7 +114,7 @@ document.querySelector(".check").addEventListener("click", function () {
         } else if (guessCounter === 3) {
           document.querySelector(`.guesses${i + 15}`).style.color = "#FF0000		";
         } else if (guessCounter === 4) {
-          document.querySelector(`.guesses${i + 19}`).style.color = "#FF0000		";
+          document.querySelector(`.guesses${i + 20}`).style.color = "#FF0000		";
         }
       }
     }
