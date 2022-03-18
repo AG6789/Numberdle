@@ -132,7 +132,7 @@ document.querySelector(".check").addEventListener("click", function () {
       }
       
     }
-  }
+  } else if (gArray2.length < 5) {document.querySelector(".tries").textContent = "At least 5 numbers!"}
 
   gArray2.splice(0, gArray2.length);
 });
