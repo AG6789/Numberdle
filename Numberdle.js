@@ -119,6 +119,7 @@ document.querySelector(".check").addEventListener("click", function () {
       }
     }
     guessCounter++;
+    console.log($0);
 
     if (JSON.stringify(secretArray) != JSON.stringify(gArray2)) {
       document.querySelector(".tries").textContent = `${
