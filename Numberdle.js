@@ -11,7 +11,7 @@ document.querySelector(".left").style.color = "white";
 const secretArray = [0, 7, 26, 63, 124];
 document.querySelector(
   ".tries1"
-).textContent = `Today's starting number is ${secretArray[0]}.`;
+).textContent = `Today's Starting number is ${secretArray[0]}.`;
 
 let guessCounter = 0;
 let guess = "";
@@ -20,7 +20,6 @@ let gArray2 = [];
 
 document.querySelector(".clear").addEventListener("click", function () {
   document.querySelector(".guess").value = "";
-  document.querySelector(".tries").textContent = "Start Playing!";
 });
 
 document.querySelector(".check").addEventListener("click", function () {
