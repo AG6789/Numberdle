@@ -125,11 +125,7 @@ document.querySelector(".check").addEventListener("click", function () {
         5 - guessCounter
       } tries left!`;
 
-      if (guessCounter === 5) {
-        document.querySelector(
-          ".tries"
-        ).textContent = `Sorry, you lost. Today's series was ${secretArray}`;
-      }
+      
     }
   }
 
