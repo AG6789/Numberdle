@@ -74,6 +74,7 @@ div {
 }
 
 .check,
-.clear {
+.clear,
+.guess {
   font-family: inherit;
 }
