@@ -25,12 +25,13 @@ document.querySelector(".clear").addEventListener("click", function () {
 document.querySelector(".check").addEventListener("click", function () {
   guess = document.querySelector(".guess").value;
   gArray = guess.split(" ");
-  gArray2 = gArray.map((i) => Number(i));
-
   if (gArray.length > 5) {
     gArray.length = 5
   }
+  gArray2 = gArray.map((i) => Number(i));
+
   
+
   for (let i = 0; i < 5; i++) {
     if (String(gArray2[i]) === "NaN") {
       console.log(gArray2[i]);
