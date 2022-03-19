@@ -8,7 +8,7 @@ for (let i = 0; i < 5; i++) {
 
 document.querySelector(".left").style.color = "white";
 
-const secretArray = [0, 7, 26, 63, 124];
+const secretArray = [7, 7, 26, 63, 124];
 document.querySelector(
   ".tries1"
 ).textContent = `Today's Starting Number is ${secretArray[0]}.`;
@@ -17,6 +17,19 @@ let guessCounter = 0;
 let guess = "";
 let gArray = [];
 let gArray2 = [];
+let counts = [1, 1, 1, 1, 1]
+let count = 0;
+
+function countInArray(array, what) {
+  let count = 0;
+  for (let i = 0; i < array.length; i++) {
+      if (array[i] === what) {
+          count++;
+      }
+  }
+  return count;
+}
+
 
 document.querySelector(".clear").addEventListener("click", function () {
   document.querySelector(".guess").value = "";
@@ -39,6 +52,13 @@ document.querySelector(".check").addEventListener("click", function () {
       gArray2.splice(0, gArray2.length);
       console.log(gArray2);
     }
+  }
+
+  for (let i = 0; i < 5; i++) {
+    if (countInArray(secretArray, secretArray[i]) !== 1) {
+      counts[i] = countInArray(secretArray, secretArray[i])
+    }
+
   }
 
   if (gArray2.length === 5) {
@@ -77,7 +97,6 @@ document.querySelector(".check").addEventListener("click", function () {
       }
       if (secretArray.includes(gArray2[i])) {
         if (gArray2[i] === secretArray[i]) {
-
           if (guessCounter === 0) {
             document.querySelector(`.guesses${i}`).style.color = "#00FF00";
           } else if (guessCounter === 1) {
@@ -91,16 +110,74 @@ document.querySelector(".check").addEventListener("click", function () {
           }
         } else {
 
-          if (guessCounter === 0) {
-            document.querySelector(`.guesses${i}`).style.color = "#FFFF00	";
-          } else if (guessCounter === 1) {
-            document.querySelector(`.guesses${i + 5}`).style.color = "#FFFF00	";
-          } else if (guessCounter === 2) {
-            document.querySelector(`.guesses${i + 10}`).style.color = "#FFFF00	";
-          } else if (guessCounter === 3) {
-            document.querySelector(`.guesses${i + 15}`).style.color = "#FFFF00	";
-          } else if (guessCounter === 4) {
-            document.querySelector(`.guesses${i + 20}`).style.color = "#FFFF00";
+          if ((counts[i] === countInArray(gArray2, gArray2[i])) || (counts[i] > countInArray(gArray2, gArray2[i]))) {
+            if (guessCounter === 0) {
+              document.querySelector(`.guesses${i}`).style.color = "#FFFF00	";
+            } else if (guessCounter === 1) {
+              console.log("nice")
+              document.querySelector(`.guesses${i + 5}`).style.color = "#FFFF00	";
+            } else if (guessCounter === 2) {
+              document.querySelector(`.guesses${i + 10}`).style.color = "#FFFF00	";
+            } else if (guessCounter === 3) {
+              document.querySelector(`.guesses${i + 15}`).style.color = "#FFFF00	";
+            } else if (guessCounter === 4) {
+              document.querySelector(`.guesses${i + 20}`).style.color = "#FFFF00";
+            }
+          } else if (counts[i] < countInArray(gArray2, gArray2[i])){
+            
+            for (let a=0; a <5; a++){
+                if (gArray2[a] === gArray2[i]) {
+                  count++;
+                  if (count <= counts[0]) {
+                    if (guessCounter === 0) {
+                      if(document.querySelector(`.guesses${a}`).style.color !== "rgb(0, 255, 0)"){
+                      document.querySelector(`.guesses${a}`).style.color = "#FFFF00	";
+                      }
+                    } else if (guessCounter === 1) {
+                      if(document.querySelector(`.guesses${a+5}`).style.color !== "rgb(0, 255, 0)"){
+                      document.querySelector(`.guesses${a + 5}`).style.color = "#FFFF00	";
+                      }
+                    } else if (guessCounter === 2) {
+                      if(document.querySelector(`.guesses${a+ 10}`).style.color !== "rgb(0, 255, 0)"){
+                      document.querySelector(`.guesses${a + 10}`).style.color = "#FFFF00	";
+                      }
+                    } else if (guessCounter === 3) {
+                      if(document.querySelector(`.guesses${a+15}`).style.color !== "rgb(0, 255, 0)"){
+                      document.querySelector(`.guesses${a + 15}`).style.color = "#FFFF00	";
+                      }
+                    } else if (guessCounter === 4) {
+                      if(document.querySelector(`.guesses${a+20}`).style.color !== "rgb(0, 255, 0)"){
+                      document.querySelector(`.guesses${a + 20}`).style.color = "#FFFF00";
+                      }
+                    }
+                } 
+              }
+              
+            }
+
+            count = 0
+
+            if (guessCounter === 0) {
+              if (document.querySelector(`.guesses${i}`).style.color !== "rgb(255, 255, 0)" && document.querySelector(`.guesses${i}`).style.color !== "rgb(255, 0, 0)" && document.querySelector(`.guesses${i}`).style.color !== "rgb(0, 255, 0)") {
+                document.querySelector(`.guesses${i}`).style.color = "#FF0000"
+              }
+            } else if (guessCounter === 1) {
+              if (document.querySelector(`.guesses${i+5}`).style.color !== "rgb(255, 255, 0)" && document.querySelector(`.guesses${i+5}`).style.color !== "rgb(255, 0, 0)" && document.querySelector(`.guesses${i+5}`).style.color !== "rgb(0, 255, 0)") {
+                document.querySelector(`.guesses${i+5}`).style.color = "#FF0000"
+              }
+            } else if (guessCounter === 2) {
+              if (document.querySelector(`.guesses${i+10}`).style.color !== "rgb(255, 255, 0)" && document.querySelector(`.guesses${i+10}`).style.color !== "rgb(255, 0, 0)" && document.querySelector(`.guesses${i+10}`).style.color !== "rgb(0, 255, 0)") {
+                document.querySelector(`.guesses${i+10}`).style.color = "#FF0000"
+              }
+            } else if (guessCounter === 3) {
+              if (document.querySelector(`.guesses${i+15}`).style.color !== "rgb(255, 255, 0)" && document.querySelector(`.guesses${i+15}`).style.color !== "rgb(255, 0, 0)" && document.querySelector(`.guesses${i+15}`).style.color !== "rgb(0, 255, 0)") {
+                document.querySelector(`.guesses${i+15}`).style.color = "#FF0000"
+              }
+            } else if (guessCounter === 4) {
+              if (document.querySelector(`.guesses${i+20}`).style.color !== "rgb(255, 255, 0)" && document.querySelector(`.guesses${i+20}`).style.color !== "rgb(255, 0, 0)" && document.querySelector(`.guesses${i+20}`).style.color !== "rgb(0, 255, 0)") {
+                document.querySelector(`.guesses${i+20}`).style.color = "#FF0000"
+              }
+            }
           }
         }
       } else {
@@ -121,9 +198,14 @@ document.querySelector(".check").addEventListener("click", function () {
     guessCounter++;
 
     if (JSON.stringify(secretArray) != JSON.stringify(gArray2)) {
-      document.querySelector(".tries").textContent = `${
+      if (5-guessCounter !== 1)
+      {document.querySelector(".tries").textContent = `${
         5 - guessCounter
       } tries left!`;
+    } else {
+      document.querySelector(".tries").textContent = `1 try left!`;
+    }
+     
 
       if (guessCounter === 5) {
         document.querySelector(
