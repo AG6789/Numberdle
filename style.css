@@ -9,10 +9,14 @@ body {
   /* background-color: #60b347; */
 }
 
+.n {
+  margin-top: 10;
+}
+
 .nnn {
   display: block;
   content: "";
-  margin-top: 10;
+  margin-top: -20;
 }
 .classy {
   display: block;
