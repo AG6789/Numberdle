@@ -9,11 +9,16 @@ body {
   /* background-color: #60b347; */
 }
 
-div {
-  width: 100%;
-  height: 100%;
+.nnn {
+  display: block;
+  content: "";
+  margin-top: 10;
 }
-
+.classy {
+  display: block;
+  content: "";
+  margin-top: 0;
+}
 .guesses0,
 .guesses1,
 .guesses2,
