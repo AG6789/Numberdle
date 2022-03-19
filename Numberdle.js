@@ -8,7 +8,7 @@ for (let i = 0; i < 5; i++) {
 
 document.querySelector(".left").style.color = "white";
 
-const secretArray = [7, 7, 26, 63, 124];
+const secretArray = [1, 1, 2, 3, 5];
 document.querySelector(
   ".tries1"
 ).textContent = `Today's Starting Number is ${secretArray[0]}.`;
