@@ -269,7 +269,7 @@ document.querySelector(".check").addEventListener("click", function () {
       if (guessCounter === 5) {
         document.querySelector(
           ".tries"
-        ).textContent = `❌ Sorry, you lost. Today's series was ${secretArray}`;
+        ).textContent = `Aw man, ${secretArray} was the answer!`;
       }
     }
   } else if (gArray2.length < 5) {
