@@ -121,9 +121,11 @@ document.querySelector(".check").addEventListener("click", function () {
     guessCounter++;
 
     if (JSON.stringify(secretArray) != JSON.stringify(gArray2)) {
-      document.querySelector(".tries").textContent = `${
-        5 - guessCounter
-      } tries left!`;
+      if (guessCounter <= 5) {
+        document.querySelector(".tries").textContent = `${
+          5 - guessCounter
+        } tries left!`;
+      }
 
       if (guessCounter === 5) {
         document.querySelector(
