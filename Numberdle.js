@@ -269,7 +269,7 @@ document.querySelector(".check").addEventListener("click", function () {
       if (guessCounter === 5) {
         document.querySelector(
           ".tries"
-        ).textContent = `Aw man, ${secretArray.join(" ")} was the answer!`;
+        ).textContent = `Aw man, ${secretArray.join(", ")} was the answer!`;
       }
     }
   } else if (gArray2.length < 5) {
