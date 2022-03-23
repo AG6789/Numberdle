@@ -278,3 +278,22 @@ document.querySelector(".check").addEventListener("click", function () {
 
   gArray2.splice(0, gArray2.length);
 });
+
+/*
+// Modal Code
+*/
+
+const modal = document.getElementById("modal");
+const closeButton = document.getElementById("modal-close-button")
+const openButton = document.getElementById("modal-open-button")
+
+closeButton.addEventListener("click", () => {
+  document.body.classList.remove("stop-scrolling");
+  modal.close()
+})
+openButton.addEventListener("click", () => {
+  document.body.classList.add("stop-scrolling");
+  modal.showModal()
+})
+
+openButton.click()

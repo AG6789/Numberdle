@@ -77,3 +77,36 @@ div {
 .clear {
   font-family: inherit;
 }
+
+#modal {
+  text-align: center;
+  background-color: #f1f1f1;
+  height: 300px;
+  width: 200px;
+}
+
+#modal::backdrop {
+  background: rgba(0,0,0,0.5);
+}
+
+#modal-close-button {
+  background-color: red;
+  color: white;
+  padding: 0.1em;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+#modal-open-button {
+  border: #eee 1px solid;
+  padding: 0.3em;
+  cursor: pointer;
+}
+
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
