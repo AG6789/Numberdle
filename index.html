@@ -1,12 +1,15 @@
 <html>
   <title>Numberdle</title>
-  <link rel="icon" href="https://www.freeiconspng.com/uploads/letter-n-icon-png-26.png">
-        
+  <link
+    rel="icon"
+    href="https://www.freeiconspng.com/uploads/letter-n-icon-png-26.png"
+  />
+
   <body class="webweb">
     <br />
     <span id="modal-open-button">How To Play</span>
     <h1 align="center">NUMBERDLE</h1>
-    <hr size="7" color="red" width="80%"/>
+    <hr size="7" color="red" width="80%" />
     <br />
     <br />
     <section class="gue0" align="center" style="font-size: 30px">
@@ -72,14 +75,39 @@
       <input type="text" class="guess" style="width: 400px; height: 30px" />
       <br />
       <br />
-      <button class="btn check" style="width: 75px; height: 50px; font-size: 20px" >Enter!</button>
-      <button class="btn clear" style="width: 75px; height: 50px; font-size: 20px">Clear</button>
+      <button
+        class="btn check"
+        style="width: 75px; height: 50px; font-size: 20px"
+      >
+        Enter!
+      </button>
+      <button
+        class="btn clear"
+        style="width: 75px; height: 50px; font-size: 20px"
+      >
+        Clear
+      </button>
       <br />
     </section>
     <dialog id="modal">
       <h3>How To Play</h3>
-      <h5>8================D</h5>
-      <span id="modal-close-button">x</span>
+      <h5>
+        <p style="font-size: 20px">
+          You've found this game, so I'll assume you've played
+          <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>.
+        </p>
+        <br />
+        <p style="font-size: 20px">
+          Numberdle uses the same game logic, but instead of a word, you have to
+          guess a 5-number arithemrtic series - APs, GPs, Squares, and so much
+          more.
+        </p>
+        <br />
+        <p style="font-size: 20px">
+          Don't tell me you don't know what 'Enter' and 'Clear' mean 🤪
+        </p>
+      </h5>
+      <span id="modal-close-button">X</span>
     </dialog>
     <script type="module" src="Numberdle.js"></script>
     <link rel="stylesheet" href="style.css" />
