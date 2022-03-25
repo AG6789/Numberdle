@@ -82,11 +82,11 @@ div {
   text-align: center;
   background-color: #f1f1f1;
   height: 300px;
-  width: 200px;
+  width: 500px;
 }
 
 #modal::backdrop {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 #modal-close-button {
@@ -104,7 +104,6 @@ div {
   padding: 0.3em;
   cursor: pointer;
 }
-
 
 .stop-scrolling {
   height: 100%;
