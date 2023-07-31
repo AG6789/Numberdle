@@ -1,12 +1,4 @@
 "use strict";
-
-document.addEventListener('DOMContentLoaded', function () {
-    const backgroundMusic = document.getElementById('backgroundMusic');
-
-    // Play the background music when the website loads
-    backgroundMusic.play();
-});
-
 document.querySelector("body").style.backgroundColor = "#222";
 
 for (let i = 0; i < 5; i++) {
@@ -296,6 +288,10 @@ const openButton = document.getElementById("modal-open-button");
 
 closeButton.addEventListener("click", () => {
   document.body.classList.remove("stop-scrolling");
+    const backgroundMusic = document.getElementById('backgroundMusic');
+
+    // Play the background music when the website loads
+    backgroundMusic.play();
   modal.close();
 });
 openButton.addEventListener("click", () => {
