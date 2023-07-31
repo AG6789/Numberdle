@@ -1,5 +1,12 @@
 "use strict";
 
+document.addEventListener('DOMContentLoaded', function () {
+    const backgroundMusic = document.getElementById('backgroundMusic');
+
+    // Play the background music when the website loads
+    backgroundMusic.play();
+});
+
 document.querySelector("body").style.backgroundColor = "#222";
 
 for (let i = 0; i < 5; i++) {
